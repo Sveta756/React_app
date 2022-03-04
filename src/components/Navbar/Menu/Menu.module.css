@@ -1,0 +1,11 @@
+.item {
+	color: #707070;
+	text-decoration: none;
+}
+.active {
+	color: #be185d;
+	text-decoration: none;
+}
+.itemWrapper {
+	cursor: pointer;
+}
