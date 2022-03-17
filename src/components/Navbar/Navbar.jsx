@@ -4,7 +4,7 @@ import FriendsOnline from './FriendsOnline/FriendsOnline';
 
 
 const Navbar = (props) => {
-	let friendsOnlineElem = props.friendsOnline.map(el => <FriendsOnline name={el.name} img={el.img}/>)
+	let friendsOnlineElem = props.friendsOnline.map(el => <FriendsOnline key={el.id} name={el.name} img={el.img}/>)
 	return (
 		<div className={s.nav}>
 			<Menu/>

@@ -6,9 +6,9 @@ import React from 'react';
 
 const Dialogs = (props) => {
 
-let dialogsElements = props.dialogs.map((dialog, i) => <DialogItem key={i} name={dialog.name} id={dialog.id}/>);
+let dialogsElements = props.dialogs.map((dialog, i) => <DialogItem key={dialog.id} name={dialog.name} id={dialog.id}/>);
 
-let messagesElements = props.messages.map((el, i) => <Message key={i} message={el.message}/>);
+let messagesElements = props.messages.map((el, i) => <Message key={el.id} message={el.message}/>);
 
 let onAddMessage = () => {
 	props.addMessage();
