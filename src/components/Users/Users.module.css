@@ -2,6 +2,43 @@
 	width: 150px;
 	height: 150px;
 }
+.btn {
+	border: 1px solid rgb(190, 188, 188);
+	background-color: #ffffff;
+	border-radius: 10px;
+	padding: 5px 10px;
+	font-weight: bold;
+	min-width: 150px;
+	font-size: 18px;
+	line-height: 18px;
+	cursor: pointer;
+	transition: 0.3s all;
+}
+.btn:hover, .nav:hover {
+	background-color: #be185d;
+	color: #ffffff;
+	border: 1px solid #be185d;
+}
+.navWrapper {
+	display: flex;
+}
+.nav, .selectedPage {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	border: 1px solid rgb(190, 188, 188);
+	background-color: #ffffff;
+	font-size: 18px;
+	padding: 10px;
+	margin-right: 10px;
+	cursor: pointer;
+	transition: 0.3s all;
+}
 .selectedPage {
 	font-weight: bold;
+	background-color: #be185d;
+	color: #ffffff;
 }
