@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import userPhoto from '../../assets/images/user.png';
 import s from './Users.module.css';
+import * as axios from 'axios';
+import { usersAPI } from '../../api/api';
 
 const Users = (props) => {
 	// let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -12,7 +14,7 @@ const Users = (props) => {
 	}
  return (
 	<div>
-		<div class={s.navWrapper}>
+		<div className={s.navWrapper}>
 			{pages.map(p => {
 				return <div className={props.currentPage === p ? s.selectedPage : s.nav} onClick={()=> {props.onPageChanged(p)}}><span>{p}</span></div>
 			})}
@@ -27,8 +29,8 @@ const Users = (props) => {
 			</div>
 			<div>
 				{u.followed 
-				? <button className={s.btn} onClick={()=> {props.unfollow(u.id)}}>Unfollow</button> 
-				: <button className={s.btn} onClick={()=> {props.follow(u.id)}}>Follow</button>}
+				? <button className={s.btn} onClick={()=> { props.unfollow(u.id)}}>Unfollow</button> 
+				: <button className={s.btn} onClick={()=> { props.follow(u.id)}}>Follow</button>}
 			</div>
 		</span>
 		<span>

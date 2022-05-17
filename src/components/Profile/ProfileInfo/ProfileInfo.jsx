@@ -1,5 +1,6 @@
 import Preloader from '../../common/Preloader/Preloader';
 import s from './ProfileInfo.module.css'
+import userPhoto from '../../../assets/images/user.png';
 
 const ProfileInfo = (props) => {
 
@@ -12,7 +13,7 @@ const ProfileInfo = (props) => {
 				<img className={s.image} src='https://catherineasquithgallery.com/uploads/posts/2021-02/1614380981_72-p-svetlo-fioletovii-fon-dlya-prezentatsii-75.jpg'/>
 			</div>
 			<div className={s.descriptionBlock}>
-				<img src={props.profile.photos.large} alt="photo" className={s.avaImg}/>
+				<img src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto} alt="photo" className={s.avaImg}/>
 				<div>
 					<div className={s.status}>{props.profile.fullName}</div>
 					<div className={s.status}>{props.profile.aboutMe}</div>

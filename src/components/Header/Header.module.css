@@ -1,4 +1,6 @@
 .header {
+  display: flex;
+  justify-content: space-between;
   grid-area: h;
   background-color: white;
   border-bottom: 1px solid rgb(190, 188, 188);
@@ -6,4 +8,7 @@
 }
 .header img {
   width: 200px;
+}
+.loginBlock a {
+  color: #707070;
 }
