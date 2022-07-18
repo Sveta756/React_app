@@ -22,7 +22,27 @@ export const usersAPI = {
 		return instanse.get(`auth/me`)
 	},
 	getProfile(userId) {
+		console.warn('Obsolete method. Please profilaAPI object')
+		return profileAPI.getProfile(userId)
+	},
+	login(email, password, rememberMe = false){
+		return instanse.post('auth/login', {email, password, rememberMe})
+	},
+	logout(){
+		return instanse.delete('auth/login')
+	},
+}
+
+
+export const profileAPI = {
+	getProfile(userId) {
 		return instanse.get(`profile/${userId}`)
+	},
+	getStatus(userId) {
+		return instanse.get(`profile/status/${userId}`)
+	},
+	updateStatus(status) {
+		return instanse.put(`profile/status`, {status: status})
 	}
 }
 

@@ -1,14 +1,13 @@
 import s from './Navbar.module.css';
 import Menu from './Menu/Menu';
-import FriendsOnline from './FriendsOnline/FriendsOnline';
+import FriendsOnlineContainer from './FriendsOnline/FriendsOnlineContainer';
 
 
-const Navbar = (props) => {
-	let friendsOnlineElem = props.friendsOnline.map(el => <FriendsOnline key={el.id} name={el.name} img={el.img}/>)
+const Navbar = () => {
 	return (
 		<div className={s.nav}>
 			<Menu/>
-			{friendsOnlineElem}
+			<FriendsOnlineContainer />
 		</div>
 	)
 }

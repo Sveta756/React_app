@@ -1,6 +1,4 @@
-/* eslint-disable default-case */
-const ADD_MESSAGE = 'ADD-MESSAGE';
-const UPDATE_NEW_MESSAGE = 'UPDATE-NEW-MESSAGE';
+const SEND_MESSAGE = 'SEND_MESSAGE';
 
 let initialState = {
 	messages: [
@@ -9,7 +7,6 @@ let initialState = {
 	{id: 3, message: 'good morning'}, 
 	{id: 4, message: 'miss you'}
 	],
-	newMessage: '',
 	dialogs: [
 		{id: 1, name: 'Dima'}, 
 		{id: 2, name: 'Sveta'}, 
@@ -20,25 +17,17 @@ let initialState = {
 
 const dialogsReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case ADD_MESSAGE: 
-			let newMessage = state.newMessage;
+		case SEND_MESSAGE: 
+			let body = action.newMessage;
 			return {
 				...state,
-				newMessage: '',
-				messages: [...state.messages, {id: 6, message: newMessage}],
-			};
-		case UPDATE_NEW_MESSAGE: 
-			return {
-				...state,
-				newMessage: action.newMessage
+				messages: [...state.messages, {id: 6, message: body}],
 			};
 		default:
 			return state;	
 	}
 
 }
-export const addMessage = () => ({ type: ADD_MESSAGE })
-export const onMessageChange = (text) => 
-	({type: UPDATE_NEW_MESSAGE, newMessage: text})
+export const addMessage = (newMessage) => ({ type: SEND_MESSAGE, newMessage })
 
 export default dialogsReducer;
