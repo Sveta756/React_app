@@ -46,7 +46,7 @@ export const PostForm = (props) => {
 	)
  }
 
-const Myposts = (props) => {
+const Myposts = React.memo((props) => {
 
 	let postsElement = props.posts.map(p => <Post key={p.id} message={p.message} like={p.likesCount}/>);
 
@@ -59,6 +59,6 @@ const Myposts = (props) => {
 			</div>
 		</div>
 	)
-}
+});
 
 export default Myposts;
